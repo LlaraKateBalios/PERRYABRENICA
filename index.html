@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Perry Gina V Abrenica Portfolio</title>
+    <style>
+        /* Reset and base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f6f0ff 0%, #fffafa 100%);
+            color: #4a4a4a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        a {
+            color: #a478f9;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover,
+        a:focus {
+            color: #5d3fd3;
+            outline: none;
+        }
+        header {
+            background: #7c56f4;
+            color: white;
+            padding: 40px 20px 60px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(124, 86, 244, 0.2);
+            border-bottom-left-radius: 24px;
+            border-bottom-right-radius: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header img.profile-picture {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(255 255 255 / 0.6);
+            margin-bottom: 24px;
+            border: 4px solid white;
+            user-select: none;
+        }
+        header h1 {
+            font-weight: 900;
+            font-size: 3rem;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+            user-select: none;
+        }
+        header p {
+            font-weight: 500;
+            font-size: 1.25rem;
+            opacity: 0.9;
+            letter-spacing: 0.05em;
+            user-select: none;
+            margin-top: 0;
+        }
+        nav {
+            margin-top: 32px;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            display: inline-flex;
+            gap: 32px;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+        nav ul li {
+            position: relative;
+        }
+        nav ul li a {
+            padding: 8px 0;
+            display: inline-block;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+        nav ul li a:hover,
+        nav ul li a:focus {
+            border-bottom-color: #f1e8ff;
+        }
+        main {
+            flex-grow: 1;
+            max-width: 900px;
+            margin: 40px auto 80px;
+            width: 90%;
+            padding: 0 10px;
+        }
+        section {
+            margin-bottom: 64px;
+        }
+        h2 {
+            font-weight: 700;
+            font-size: 2.25rem;
+            color: #4929aa;
+            border-left: 6px solid #7c56f4;
+            padding-left: 16px;
+            margin-bottom: 24px;
+            user-select: none;
+        }
+        p {
+            font-size: 1.125rem;
+            color: #555;
+            max-width: 720px;
+            margin-bottom: 20px;
+        }
+        .project {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgb(124 86 244 / 0.15);
+            padding: 24px 32px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default;
+        }
+        .project:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 36px rgb(124 86 244 / 0.3);
+        }
+        .project h3 {
+            font-weight: 700;
+            color: #7c56f4;
+            margin-bottom: 12px;
+            user-select: none;
+        }
+        form {
+            max-width: 480px;
+            background: white;
+            padding: 32px 32px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(124, 86, 244, 0.15);
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #4929aa;
+            user-select: none;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #cfc9f8;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+            resize: vertical;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #7c56f4;
+            outline: none;
+            box-shadow: 0 0 8px rgba(124, 86, 244, 0.5);
+        }
+        textarea {
+            min-height: 120px;
+        }
+        button {
+            background: #7c56f4;
+            color: white;
+            border: none;
+            padding: 16px 36px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            border-radius: 24px;
+            cursor: pointer;
+            margin-top: 24px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            user-select: none;
+        }
+        button:hover,
+        button:focus {
+            background-color: #5d3fd3;
+            outline: none;
+            transform: scale(1.05);
+        }
+        footer {
+            background: #0e0c15;
+            color: white;
+            text-align: center;
+            padding: 16px 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            user-select: none;
+            box-shadow: 0 -4px 20px rgba(124, 86, 244, 0.2);
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+        }
+
+        /* kate */
+        #about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{ /*column1*/
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{ /*column2*/
+    flex-basis: 60%;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+        /* Responsive */
+        @media (max-width: 600px) {
+            header img.profile-picture {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 16px;
+            }
+            header h1 {
+                font-size: 2.25rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 16px;
+            }
+            nav ul li a {
+                font-size: 1.125rem;
+            }
+            main {
+                margin: 20px auto 40px;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            .project {
+                padding: 20px 24px;
+            }
+            form {
+                padding: 24px 20px 32px;
+            }
+            li{
+                   font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img 
+            src="https://lh3.googleusercontent.com/a-/ALV-UjUOTTWgxyxOc4yYYmN-6sbBKYMtm1MSXJBrJka75lVs0Vz44rhooLf1mtJjBt7Wx50jQygjKQkp4x5yTG6mspqqrdaFfuE7PCz0fndapo9x7CkasqV5SF0yu9zRfLkPe0Ycrnfp05wwtHxl78UHEdyDkbTyMOyHjRS-J0ksY6plbpSKxPRE-eQUQ0e5jf__mCr83OtQ55zQj7Jo0jxd3i_APQfOEpvdxt7tXh92LjDcN6cvUOEkuVl1X2lWL9C9bpPh-rDs3RYyENQpSDNvhFLKMdKaBUAJ9GVBDaBnFYNCDn8sf4ixHRCDfJ6UP13ml_vBpCEtVR3hKkZX2sWfca3CgPCn3sZorRjxoJSeMEnAK0oZdt0bKFm0DioWSeUF3HoaBW9tfutyKZtF-pSFN2763xJAz3JIMKKEoUANIweSeHfyU6Va1ca8u93TqziZ0k7Xr1Oe6dXHDzMLQffRosvLHcvM13Jp-kYfBug_YuzYCInxJPMCsnAM3YN1dIHiRqflZ0M-cf87-zMPKaxIY8TxJi-998dGjCrDZzyp2K-wXhi3qpUMRFF5guo-WOcsvf-GKEfS3V2T1uaz3pXhRIasEmutlb6wFhNi-NuUJagYtugCRp-xvF6seqbtkIpU0EZuyZZijyE-n9n-lxBTtb_1dMm-Z5QRDTPTfgfXDdDfiA4M9JcP_iBmTcw6G4-Z3qxJ3sUZ-DkzrrZFfb431OnlLEx8Ha3uZ_bNWZUz3wYjCTCAp6TsjLZLY96h-XM8h7pKPenfE4nj3U45_DoESLR4beucUCAA7HZJvrYRwak45IoSiDOKIjekqkhNZ-uGJDFszqXIJ1_SzPm9ytwXxDkYKJKOArMaXRNDLS24w_hiNrNYzsOXXeSJwDayRBlfrugMvSCKxIUSgNGZBQQx9UEJXmVIsOHGMWCgorNL_NePjYDFzyaVlwLT9449U0al0aJ3EVd3rvI26vmo97xWTcaVngcj1yGP=s288-c-no"
+            alt="Portrait profile picture of my cute selfie and a vain one"
+            class="profile-picture"
+            width="160" height="160"
+            onerror="this.onerror=null;this.src='https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/af553a05-2c5b-4110-874f-996c37b5befa.png';"
+        />
+        <h1>Perry Gina V Abrenica</h1>
+        <p>Web Developer & Designer</p>
+        <nav>
+            <ul>
+                <li><a href="#about" tabindex="1">About</a></li>
+                <li><a href="#projects" tabindex="2">Projects</a></li>
+                <li><a href="#contact" tabindex="3">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<!--kate-->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="https://scontent.fceb1-1.fna.fbcdn.net/v/t1.15752-9/506740773_1658359594870775_5867230903983671928_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeES9CsrUsWAVfd_hRWlqgvFx_xK8J7MHEzH_ErwnswcTP5AfvAokD-NR5jCUXK-XLAxqGMdJNiNXoK4wLvWEyNO&_nc_ohc=IL5eRVlMvRwQ7kNvwHW1Ym_&_nc_oc=AdmzF35QYFJouFVMYYBVWLwMOXRy6HNnkW-ytBiszkyiEoXzJFDo80t4UBavgdgSIA4&_nc_zt=23&_nc_ht=scontent.fceb1-1.fna&oh=03_Q7cD2gHKxHsAJgeHs4QAbAdR3sHOF3CKJ0GqnEk6PmY9phTB1w&oe=687C78C3">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1>
+                        <p>Hello! I'm Perry, a passionate web developer with a love for creating beautiful and functional websites. I focus on user-friendly, accessible, and modern web design to help brands shine online.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('profile')">Profile</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="profile">
+                        <ul>
+                            <li><span>Name:</span><br>Perry Gina Vallecer Abrenica</li>
+                            <li><span>Age:</span><br>23 years old</li>
+                            <li><span>Date of Birth:</span><br>January 28, 2002</li>
+                            <li><span>Location:</span><br>Purok Sampaguita, Calindagan Dumaguete City</li>
+                            <li><span>Cellphone Number:</span><br>0931-057-1724</li>
+                            <li><span>Email Address:</span><br>abrenicaperry13@gmail.com<br>pvabrenica.student@asiancollege.edu.ph</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                             <li><span>Bartender</span><br>2022 - current<br>Piapi Dumaguete</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>College</span><br>Asian College of Science and Technology<br>Dr.Locsin Street, Dumaguete, Negros Oriental<br>2023-Present</li>
+                            <li><span>Senior High School</span><br>Dumaguete City National High School<br>Calindagan, Negros Oriental<br>2022-2023</li>
+                            <li><span>Secondary</span><br>Dumaguete City National High School<br>Calinndagan, Negros Oriental<br>2015-2020</li>
+                            <li><span>Elementary</span><br>City Centaral Elementary School<br>Dumaguete City<br>2009-2015</li>   
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-block-container">
+
+        <!-- Project 1: Figma -->
+        <div class="project-block-item">
+            <h3> Editing SKills (Figma)</h3>
+            <p>I designed a simple picture of my hard skills using <strong>Figma</strong>. It shows my work sample below .</p>
+            <img src="Capture.PNG">
+        </div>
+
+        <!-- Project 2: Photopea -->
+        <div class="project-block-item">
+            <h3>Poster Design (Photopea)</h3>
+            <p>I made a poster of a burger using <strong>Photopea</strong>. A hearty, juicy burger stacked high with fresh ingredients and rich flavors, offering a satisfying balance of savory, tangy, and creamy notes—all held together by a warm, toasted bun.
+
+.</p>
+           <img src="phottt.PNG">
+        </div>
+        
+       
+
+    </div>
+</section>
+
+        <section id="contact" tabindex="0">
+            <h2>Contact Me</h2>
+            <form id="contact-form" aria-label="Contact form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required autocomplete="name" aria-required="true" />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" />
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required aria-required="true"></textarea>
+
+                <button type="submit" aria-label="Send message">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Perry Gina V Abrenica</p>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+
+<!--kate-->
+    <script>
+
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+            
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+
+        </script>
+</body>
+</html>
